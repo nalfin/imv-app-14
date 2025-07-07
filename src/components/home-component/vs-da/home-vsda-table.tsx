@@ -33,7 +33,7 @@ export default function HomeVSDATable({
     const columns = useMemo(() => {
         if (!startDate || !endDate) return []
         return getColumnsHomeVSDA(startDate, endDate, showDateHeader)
-    }, [startDate, endDate, data, showDateHeader])
+    }, [startDate, endDate, showDateHeader])
 
     return (
         <div className="grid gap-6">

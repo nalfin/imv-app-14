@@ -21,7 +21,7 @@ export function usePersistedDateRange(defaultStart?: Date, defaultEnd?: Date) {
         )
         setEndDate(storedEnd ? new Date(storedEnd) : (defaultEnd ?? null))
         // ⛔️ JANGAN MASUKKAN defaultStart ke dependency!
-    }, []) // ✅ hanya dijalankan sekali saat komponen mount
+    }, [defaultStart, defaultEnd]) // ✅ hanya dijalankan sekali saat komponen mount
 
     useEffect(() => {
         if (typeof window !== 'undefined' && startDate) {

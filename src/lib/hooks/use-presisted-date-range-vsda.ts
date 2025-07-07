@@ -24,7 +24,7 @@ export function usePersistedDateRangeVSDA(
             storedStart ? new Date(storedStart) : (defaultStart ?? null)
         )
         setEndDate(storedEnd ? new Date(storedEnd) : (defaultEnd ?? null))
-    }, [])
+    }, [defaultStart, defaultEnd])
 
     useEffect(() => {
         if (typeof window !== 'undefined' && startDate) {

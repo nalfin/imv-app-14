@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { fetchVSDAWithCache } from '@/lib/api/vsda/get-vsda-with-cache'
 import HomeVSDATable from './home-vsda-table'
 import { VSDA } from '@/types/vsda'
@@ -29,7 +29,7 @@ const HomeVSDAPage = () => {
         new Date('2025-07-05')
     )
 
-    const getDataVSDA = async () => {
+    const getDataVSDA = useCallback(async () => {
         if (!startDateVSDA || !endDateVSDA) return
 
         try {
@@ -47,11 +47,11 @@ const HomeVSDAPage = () => {
         } finally {
             setLoading(false)
         }
-    }
+    }, [startDateVSDA, endDateVSDA])
 
     useEffect(() => {
         getDataVSDA()
-    }, [startDateVSDA, endDateVSDA])
+    }, [startDateVSDA, endDateVSDA, getDataVSDA])
 
     useEffect(() => {
         setIsClient(true)
@@ -59,7 +59,7 @@ const HomeVSDAPage = () => {
 
     return (
         <>
-            <div className="bg-card/50 border-border rounded-md border p-6">
+            <div className="rounded-md border border-border bg-card/50 p-6">
                 <p className="flex h-9 items-center font-semibold">
                     PROGRESS POINT DA ALL MEMBER
                 </p>
