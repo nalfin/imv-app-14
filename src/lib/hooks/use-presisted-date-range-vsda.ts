@@ -24,7 +24,8 @@ export function usePersistedDateRangeVSDA(
             storedStart ? new Date(storedStart) : (defaultStart ?? null)
         )
         setEndDate(storedEnd ? new Date(storedEnd) : (defaultEnd ?? null))
-    }, [defaultStart, defaultEnd])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     useEffect(() => {
         if (typeof window !== 'undefined' && startDate) {

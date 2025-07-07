@@ -80,8 +80,8 @@ export function DataTable<TData, TValue>({
         <>
             <div className="min-w-full space-y-3 font-mono">
                 {/* Search & Top Controls */}
-                <div className="flex flex-col justify-between gap-4 py-4 md:flex-row md:items-center md:gap-6">
-                    <div className="flex w-full items-center gap-3 md:max-w-sm">
+                <div className="flex flex-col-reverse justify-between gap-3 py-4 md:grid md:grid-cols-3 md:items-center">
+                    <div className="flex w-full max-w-md items-center gap-3 md:col-span-1">
                         <Input
                             className="w-full"
                             placeholder="Filter by name..."
@@ -98,7 +98,7 @@ export function DataTable<TData, TValue>({
                         />
                     </div>
 
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-6 md:col-span-2">
                         <DatePickEvent
                             valueStartDate={startDate ?? undefined}
                             valueEndDate={endDate ?? undefined}
@@ -110,7 +110,7 @@ export function DataTable<TData, TValue>({
 
                 {/* Table UI */}
                 <div>
-                    <ScrollArea className="w-full rounded-md border whitespace-nowrap">
+                    <ScrollArea className="w-full whitespace-nowrap rounded-md border">
                         <div className="overflow-x-auto rounded-md border font-mono">
                             <Table className="w-full table-auto">
                                 <TableHeader>
@@ -140,7 +140,7 @@ export function DataTable<TData, TValue>({
                                                                 <div
                                                                     onMouseDown={header.getResizeHandler()}
                                                                     onTouchStart={header.getResizeHandler()}
-                                                                    className="absolute top-0 right-0 h-full w-1 cursor-col-resize bg-transparent transition group-hover:bg-blue-400"
+                                                                    className="absolute right-0 top-0 h-full w-1 cursor-col-resize bg-transparent transition group-hover:bg-blue-400"
                                                                 />
                                                             )}
                                                         </TableHead>
@@ -209,13 +209,13 @@ export function DataTable<TData, TValue>({
                     {/* Bottom Controls */}
                     <div className="flex items-center justify-between space-x-2 py-4">
                         {startDate && endDate && (
-                            <p className="text-muted-foreground text-sm">
+                            <p className="text-sm text-muted-foreground">
                                 Showing data from{' '}
-                                <span className="text-primary font-medium">
+                                <span className="font-medium text-primary">
                                     {formatDate(startDate)}
                                 </span>{' '}
                                 to{' '}
-                                <span className="text-primary font-medium">
+                                <span className="font-medium text-primary">
                                     {formatDate(endDate)}
                                 </span>
                             </p>

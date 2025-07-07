@@ -56,15 +56,14 @@ const HomeEventPage = () => {
         }
 
         getDataEvent()
-    }, [startDate, endDate, eventName]) // ✅ Akan refetch data ketika eventName berubah
+    }, [startDate, endDate, eventName])
 
     useEffect(() => {
         setIsClient(true)
     }, [])
-
     return (
         <>
-            <div className="bg-card/50 border-border rounded-md border p-6">
+            <div className="rounded-md border border-border bg-card/50 p-6">
                 <div className="flex justify-between">
                     {isClient && (
                         <SelectEvent

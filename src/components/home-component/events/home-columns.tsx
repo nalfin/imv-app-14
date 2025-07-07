@@ -217,11 +217,18 @@ export function getColumnsFromDateRange(
                     ? 'bg-green-600'
                     : result === 'UNQUALIFIED'
                       ? 'bg-red-600'
-                      : 'bg-gray-800'
+                      : 'bg-stone-900'
+
+            const textColor =
+                result === 'QUALIFIED'
+                    ? 'text-white'
+                    : result === 'UNQUALIFIED'
+                      ? 'text-white'
+                      : 'text-muted-foreground italic'
 
             return (
                 <div
-                    className={`w-full rounded px-2 py-1 text-center font-semibold text-white ${bg}`}
+                    className={`flex h-[30px] w-full items-center justify-center rounded px-2 text-center font-semibold ${textColor} ${bg}`}
                 >
                     {result}
                 </div>

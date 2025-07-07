@@ -130,7 +130,7 @@ export function DataTable<TData, TValue>({
                 </div>
 
                 {/* Table UI */}
-                <ScrollArea className="w-full rounded-md border whitespace-nowrap">
+                <ScrollArea className="w-full whitespace-nowrap rounded-md border">
                     <div className="overflow-x-auto rounded-md border font-mono">
                         <Table className="w-full table-auto">
                             <TableHeader>
@@ -155,7 +155,7 @@ export function DataTable<TData, TValue>({
                                                     <div
                                                         onMouseDown={header.getResizeHandler()}
                                                         onTouchStart={header.getResizeHandler()}
-                                                        className="absolute top-0 right-0 h-full w-1 cursor-col-resize bg-transparent transition group-hover:bg-blue-400"
+                                                        className="absolute right-0 top-0 h-full w-1 cursor-col-resize bg-transparent transition group-hover:bg-blue-400"
                                                     />
                                                 )}
                                             </TableHead>
@@ -241,7 +241,7 @@ export function DataTable<TData, TValue>({
                                 table.resetRowSelection()
                             }}
                         />
-                        <div className="text-muted-foreground flex-1 text-sm">
+                        <div className="flex-1 text-sm text-muted-foreground">
                             {table.getFilteredSelectedRowModel().rows.length} of{' '}
                             {table.getFilteredRowModel().rows.length} row(s)
                             selected.
@@ -267,13 +267,13 @@ export function DataTable<TData, TValue>({
                     </div>
 
                     {startDate && endDate && (
-                        <p className="text-muted-foreground w-full text-center text-sm">
+                        <p className="w-full text-center text-sm text-muted-foreground">
                             Showing data from{' '}
-                            <span className="text-primary font-medium">
+                            <span className="font-medium text-primary">
                                 {formatDate(startDate)}
                             </span>{' '}
                             to{' '}
-                            <span className="text-primary font-medium">
+                            <span className="font-medium text-primary">
                                 {formatDate(endDate)}
                             </span>
                         </p>
@@ -295,7 +295,7 @@ export function DataTable<TData, TValue>({
                             }}
                         />
 
-                        <div className="text-muted-foreground flex-1 text-sm">
+                        <div className="flex-1 text-sm text-muted-foreground">
                             {table.getFilteredSelectedRowModel().rows.length} of{' '}
                             {table.getFilteredRowModel().rows.length} row(s)
                             selected.
@@ -325,13 +325,13 @@ export function DataTable<TData, TValue>({
                     </div>
                     <div className="flex items-center space-x-2">
                         {startDate && endDate && (
-                            <p className="text-muted-foreground px-1 text-sm">
+                            <p className="px-1 text-sm text-muted-foreground">
                                 Showing data from{' '}
-                                <span className="text-primary font-medium">
+                                <span className="font-medium text-primary">
                                     {formatDate(startDate)}
                                 </span>{' '}
                                 to{' '}
-                                <span className="text-primary font-medium">
+                                <span className="font-medium text-primary">
                                     {formatDate(endDate)}
                                 </span>
                             </p>

@@ -113,15 +113,15 @@ const DialogEditVSDA = ({
                                 value={selectedTanggal}
                                 onChange={setSelectedTanggal}
                             />
-                            <div className="rounded-sm border border-border bg-secondary/40 p-4">
+                            <div className="rounded-sm border border-border bg-input/30 p-4">
                                 <RadioVsDA
                                     value={selectedPoin}
                                     onChange={setSelectedPoin}
                                 />
                             </div>
-                            <div className="grid gap-3 rounded-sm border border-border bg-secondary/40 p-4">
+                            <div className="grid gap-3 rounded-sm border border-border bg-input/30 p-4">
                                 <div className="flex items-center justify-between">
-                                    <p className="text-sm text-accent-foreground">
+                                    <p className="text-sm text-muted-foreground">
                                         Daftar nama yang diedit poinnya:
                                     </p>
 
@@ -129,7 +129,7 @@ const DialogEditVSDA = ({
                                         {jumlahTerisi}/{allDataVSDA.length}
                                     </span>
                                 </div>
-                                <p className="text-sm text-muted-foreground">
+                                <p className="text-sm text-foreground">
                                     {(Array.isArray(selectedDataVSDA)
                                         ? selectedDataVSDA
                                         : [selectedDataVSDA]

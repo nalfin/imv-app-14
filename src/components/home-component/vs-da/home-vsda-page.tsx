@@ -29,7 +29,7 @@ const HomeVSDAPage = () => {
         new Date('2025-07-05')
     )
 
-    const getDataVSDA = useCallback(async () => {
+    const getDataVSDA = async () => {
         if (!startDateVSDA || !endDateVSDA) return
 
         try {
@@ -47,11 +47,12 @@ const HomeVSDAPage = () => {
         } finally {
             setLoading(false)
         }
-    }, [startDateVSDA, endDateVSDA])
+    }
 
     useEffect(() => {
         getDataVSDA()
-    }, [startDateVSDA, endDateVSDA, getDataVSDA])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [startDateVSDA, endDateVSDA])
 
     useEffect(() => {
         setIsClient(true)

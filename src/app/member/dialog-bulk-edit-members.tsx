@@ -109,11 +109,11 @@ export function DialogBulkEditMembers({
                     </DialogHeader>
 
                     <div className="grid gap-4">
-                        <div className="grid gap-2 rounded-sm border border-border bg-secondary/40 p-4 text-sm">
+                        <div className="grid gap-2 rounded-sm border border-border bg-input/30 p-4 text-sm">
                             <p className="text-sm text-muted-foreground">
                                 Daftar member:
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm text-foreground">
                                 {selectedMembers.map((m) => m.name).join(', ')}
                             </p>
                         </div>
